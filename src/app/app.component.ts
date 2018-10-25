@@ -16,6 +16,6 @@ export class AppComponent {
 	 */
 
 	go_alert(tipo) {
-		this._sms.add({ tipo: tipo, mensaje: "Mensaje de prueba " + Math.random() })
+		this._sms.add({ tipo: tipo, mensaje: String(Math.random()) })
 	}
 }
