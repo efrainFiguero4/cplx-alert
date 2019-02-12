@@ -1,44 +1,44 @@
 {
-  "name": "cplx-alert",
-  "version": "1.0.3rc",
-  "description": "",
-  "author": {
-    "email": "efrain.figue.95@gmail.com",
-    "url": "https://github.com/kowalski50",
-    "name": "Efrain Figueroa"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/kowalski50/cplx-alert.git"
-  },
-  "keywords": [
-    "angular",
-    "javascript",
-    "typescript",
-    "alertas",
-    "mensajes",
-    "mensaje",
-    "growl",
-    "alert",
-    "angular 6"
-  ],
-  "homepage": "https://github.com/kowalski50",
-  "license": "MIT",
-  "peerDependencies": {
-    "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
-    "@angular/core": "^6.0.0-rc.0 || ^6.0.0"
-  },
-  "main": "bundles/cplx-alert.umd.js",
-  "module": "fesm5/cplx-alert.js",
-  "es2015": "fesm2015/cplx-alert.js",
-  "esm5": "esm5/cplx-alert.js",
-  "esm2015": "esm2015/cplx-alert.js",
-  "fesm5": "fesm5/cplx-alert.js",
-  "fesm2015": "fesm2015/cplx-alert.js",
-  "typings": "cplx-alert.d.ts",
-  "metadata": "cplx-alert.metadata.json",
-  "sideEffects": false,
-  "dependencies": {
-    "tslib": "^1.9.0"
-  }
+	"name": "cplx-alert",
+	"version": "1.0.4",
+	"description": "",
+	"author": {
+		"email": "efrain.figue.95@gmail.com",
+		"url": "https://github.com/kowalski50",
+		"name": "Efrain Figueroa"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/kowalski50/cplx-alert.git"
+	},
+	"keywords": [
+		"angular",
+		"javascript",
+		"typescript",
+		"alertas",
+		"mensajes",
+		"mensaje",
+		"growl",
+		"alert",
+		"angular 6"
+	],
+	"homepage": "https://github.com/kowalski50",
+	"license": "MIT",
+	"peerDependencies": {
+		"@angular/common": "^7.2.0",
+		"@angular/core": "^7.2.0"
+	},
+	"main": "bundles/cplx-alert.umd.js",
+	"module": "fesm5/cplx-alert.js",
+	"es2015": "fesm2015/cplx-alert.js",
+	"esm5": "esm5/cplx-alert.js",
+	"esm2015": "esm2015/cplx-alert.js",
+	"fesm5": "fesm5/cplx-alert.js",
+	"fesm2015": "fesm2015/cplx-alert.js",
+	"typings": "cplx-alert.d.ts",
+	"metadata": "cplx-alert.metadata.json",
+	"sideEffects": false,
+	"dependencies": {
+		"tslib": "^1.9.0"
+	}
 }

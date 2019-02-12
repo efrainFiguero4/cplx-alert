@@ -40,9 +40,18 @@
  	font-family: 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif;
  }
 
+ /*
  .fa-times-circle:before {
  	font-family: monospace;
  	content: "x";
+ }
+*/
+
+ .center-center {
+ 	display: flex;
+ 	flex-direction: column;
+ 	justify-content: center;
+ 	align-items: center;
  }
 
  .close {

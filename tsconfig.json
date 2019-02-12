@@ -23,6 +23,12 @@
       ],
       "cplx-alert/*": [
         "dist/cplx-alert/*"
+      ],
+      "ng-alert": [
+        "dist/ng-alert"
+      ],
+      "ng-alert/*": [
+        "dist/ng-alert/*"
       ]
     }
   }

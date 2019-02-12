@@ -1,20 +1,11 @@
-import { Component, OnInit, SimpleChanges, OnDestroy } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { Alert, CplxAlertService, AlertType } from './cplx-alert.service';
 import { isNullOrUndefined } from 'util';
 import { Subscription } from 'rxjs';
 
 @Component({
 	selector: 'cplx-alert',
-	template: `
-		<div class="alerta-mensaje">
-			<div *ngFor="let m of alertas; let i = index" class="{{cssClass(m)}} ns-growl ns-box ns-effect-scale {{m.class}}">
-				<div class="sms-box-inner">
-					<p class="p-0 m-0">{{m.mensaje}}.</p>
-				</div>
-				<i class="fa fa-times-circle fa-lg close" aria-hidden="true" style="cursor:pointer" (click)="removerMensaje(m,i)"></i>
-			</div>
-		</div>
-  `,
+	templateUrl: './cplx-alert.component.html',
 	styleUrls: ['./cplx-alert.component.css']
 })
 
@@ -29,7 +20,7 @@ export class CplxAlertComponent implements OnDestroy {
 				if (!this.validate_mensaje(alert)) {
 					this.alertas.push(alert);
 					setTimeout(() => {
-						this.removerMensaje(alert, this.alertas.indexOf(alert));
+						//this.removerMensaje(alert, this.alertas.indexOf(alert));
 					}, 5000)
 				}
 			}
