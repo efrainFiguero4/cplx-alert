@@ -5,6 +5,7 @@ export declare class CplxAlertComponent implements OnDestroy {
     private _sms;
     subscription: Subscription;
     alertas: Alert[];
+    timeout: number;
     constructor(_sms: CplxAlertService);
     ngOnDestroy(): void;
     validate_mensaje(mensaje: Alert): boolean;

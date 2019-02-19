@@ -1,4 +1,4 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, Input } from '@angular/core';
 import { Alert, CplxAlertService, AlertType } from './cplx-alert.service';
 import { isNullOrUndefined } from 'util';
 import { Subscription } from 'rxjs';
@@ -13,6 +13,7 @@ export class CplxAlertComponent implements OnDestroy {
 
 	subscription: Subscription;
 	alertas = new Array<Alert>();
+	@Input() timeout: number;
 
 	constructor(private _sms: CplxAlertService) {
 		this.subscription = this._sms.getAlertas().subscribe((alert: Alert) => {
@@ -20,8 +21,8 @@ export class CplxAlertComponent implements OnDestroy {
 				if (!this.validate_mensaje(alert)) {
 					this.alertas.push(alert);
 					setTimeout(() => {
-						//this.removerMensaje(alert, this.alertas.indexOf(alert));
-					}, 5000)
+						this.removerMensaje(alert, this.alertas.indexOf(alert));
+					}, isNullOrUndefined(this.timeout) ? 5000 : this.timeout)
 				}
 			}
 		});
