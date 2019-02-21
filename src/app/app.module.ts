@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { CplxAlertModule, CplxAlertService } from 'projects/cplx-alert/src/public_api';
 import { RouterModule, Routes } from '@angular/router';
+import { CplxDatatableModule } from 'projects/cplx-datatable/src/public_api';
 
 const routes: Routes = [{
 	path: '', component: AppComponent
@@ -14,7 +15,10 @@ const routes: Routes = [{
 		AppComponent
 	],
 	imports: [
-		BrowserModule, CplxAlertModule.forRoot(), RouterModule.forRoot(routes)
+		BrowserModule,
+		CplxDatatableModule,
+		CplxAlertModule.forRoot(),
+		RouterModule.forRoot(routes)
 	],
 	providers: [CplxAlertService],
 	bootstrap: [AppComponent]

@@ -1,0 +1,63 @@
+<div class="row align-items-center">
+	<div class="col-sm-6">
+		<input *ngIf="config.search" type="text" placeholder="Buscar" [(ngModel)]="search"
+			class="form-control form-control-sm">
+	</div>
+	<div class="col-sm-6">
+		<div class="d-flex flex-row py-2 align-items-center bg-sura" *ngIf="config.pagination">
+			<div class="ml-auto" *ngIf="paginacion.totalitem > 0">
+				<ul class="pagination pagination-sm m-0 align-items-center">
+					<li class="list-inline-item text-primary">
+						desde {{ paginacion.desde }} al {{ paginacion.hasta }} de {{ paginacion.totalitem }}</li>
+					<li class="list-inline-item text-primary pr-4">
+						| {{paginacion.totalpaginas + ' Páginas'}}
+					</li>
+					<li [ngClass]="{'disabled': paginacion.actual == 1}"
+						(click)="go_page(paginacion.totalitem,paginacion.atras,paginacion.porpagina)" class="page-item">
+						<a class="page-link">Previous</a>
+					</li>
+					<li (click)="pag == paginacion.actual ? '' : go_page(paginacion.totalitem,pag,paginacion.porpagina)"
+						class="page-item" [ngClass]="{'active': pag == paginacion.actual}"
+						*ngFor="let pag of paginacion?.paginas">
+						<a class="page-link">{{pag}}</a>
+					</li>
+					<li [ngClass]="{'disabled' : paginacion.actual == paginacion.totalpaginas}"
+						(click)="go_page(paginacion.totalitem,paginacion.siguiente,paginacion.porpagina)"
+						class="page-item">
+						<a class="page-link">Next</a>
+					</li>
+				</ul>
+			</div>
+			<div class="pl-5" *ngIf="paginacion.totalitem > 0">
+				<div class="dropdown">
+					<a class="btn btn-success btn-sm dropdown-toggle" role="button" data-toggle="dropdown"
+						aria-haspopup="true" aria-expanded="false">
+						{{paginacion.porpagina}} Páginas
+					</a>
+					<div class="dropdown-menu dropdown-menu-right">
+						<a class="dropdown-item" *ngFor="let pag of pages" (click)="go_porpage(pag)">{{pag}} Páginas</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="table-responsive">
+	<table class="table table-sura table-bordered table-hover">
+		<thead class="table-thead">
+			<tr>
+				<th class="text-center w-5" *ngFor="let cabecera of header"> {{cabecera}}</th>
+			</tr>
+		</thead>
+		<tbody *ngIf="!loading && itemlistcurrentpage?.length">
+			<tr *ngFor="let item of itemlistcurrentpage | datatablepipe : search != '' ? search_data(search) :''">
+				<td *ngFor="let c of content">{{item[c]}}</td>
+			</tr>
+		</tbody>
+	</table>
+	<div class="w-100 text-center text-bold-sura" *ngIf="!itemlistcurrentpage?.length || loading"> <i
+			class="fa fa-spin fa-pulse"></i>
+		<i *ngIf="loading" class="fa fa-spinner fa-pulse"></i>
+		{{loading ? 'CARGANDO ...' : (!itemlistcurrentpage?.length ? '-- No se encontraron registros --' : '')}}
+	</div>
+</div>

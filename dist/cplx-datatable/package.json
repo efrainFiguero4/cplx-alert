@@ -1,0 +1,42 @@
+{
+  "name": "cplx-datatable",
+  "version": "0.0.2",
+  "description": "Datatable",
+  "author": {
+    "email": "efrain.figue.95@gmail.com",
+    "url": "https://github.com/kowalski50",
+    "name": "Efrain Figueroa"
+  },
+  "keywords": [
+    "angular",
+    "typescript",
+    "tables",
+    "tablas",
+    "datatable",
+    "datatable pagination",
+    "angular 7 datatable"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kowalski50/cplx-alert.git"
+  },
+  "homepage": "https://github.com/kowalski50",
+  "license": "MIT",
+  "peerDependencies": {
+    "@angular/common": "^7.2.0",
+    "@angular/core": "^7.2.0"
+  },
+  "main": "bundles/cplx-datatable.umd.js",
+  "module": "fesm5/cplx-datatable.js",
+  "es2015": "fesm2015/cplx-datatable.js",
+  "esm5": "esm5/cplx-datatable.js",
+  "esm2015": "esm2015/cplx-datatable.js",
+  "fesm5": "fesm5/cplx-datatable.js",
+  "fesm2015": "fesm2015/cplx-datatable.js",
+  "typings": "cplx-datatable.d.ts",
+  "metadata": "cplx-datatable.metadata.json",
+  "sideEffects": false,
+  "dependencies": {
+    "tslib": "^1.9.0"
+  }
+}

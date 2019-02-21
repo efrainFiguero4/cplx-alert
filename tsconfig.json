@@ -24,11 +24,11 @@
       "cplx-alert/*": [
         "dist/cplx-alert/*"
       ],
-      "ng-alert": [
-        "dist/ng-alert"
+      "cplx-datatable": [
+        "dist/cplx-datatable"
       ],
-      "ng-alert/*": [
-        "dist/ng-alert/*"
+      "cplx-datatable/*": [
+        "dist/cplx-datatable/*"
       ]
     }
   }

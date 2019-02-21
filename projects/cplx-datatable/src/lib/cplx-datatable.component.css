@@ -1,0 +1,106 @@
+.pagination .page-item.active a {
+	color: white !important;
+	background-color: #0039ae !important;
+	font-weight: bold;
+}
+
+/***/
+
+.dropdown .dropdown-menu {
+	box-shadow: 0 2px 4px 0 rgba(34, 36, 38, .12), 0 2px 10px 0 rgba(34, 36, 38, .15);
+	-moz-box-shadow: 0 2px 4px 0 rgba(34, 36, 38, .12), 0 2px 10px 0 rgba(34, 36, 38, .15);
+	-webkit-box-shadow: 0 2px 4px 0 rgba(34, 36, 38, .12), 0 2px 10px 0 rgba(34, 36, 38, .15);
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	-ms-transition: all 0.3s;
+	-o-transition: all 0.3s;
+	transition: all 0.3s;
+	font-size: 14px;
+	max-height: 0;
+	display: block;
+	overflow: hidden;
+	opacity: 0;
+}
+
+.dropdown:hover .dropdown-menu {
+	max-height: 250px;
+	opacity: 1;
+}
+
+.dropdown-menu {
+	margin: 0 0 0 !important;
+	border-radius: 0rem !important;
+}
+
+.dropdown-menu {
+	font-size: 13px !important;
+}
+
+/**/
+
+.text-bold-sura {
+	color: #0039ae !important;
+	font-weight: 700 !important;
+	font-family: 'Trebuchet MS' !important;
+}
+
+.text-bold {
+	font-weight: 700 !important;
+}
+
+.text-sura {
+	font-size: 12px !important;
+	color: #0039ae !important;
+	font-family: 'Trebuchet MS' !important;
+}
+
+.bg-sura {
+	background-color: #EAF0F8 !important;
+	font-family: 'Trebuchet MS' !important;
+}
+
+.col-form-label {
+	font-size: 13px !important;
+	line-height: 1.5 !important;
+	color: #0039ae !important;
+	font-family: 'Trebuchet MS';
+}
+
+/***/
+
+.table thead th {
+	color: #0039A6 !important;
+	background-color: #EAF0F8 !important;
+	font-size: 10px !important;
+}
+
+.table.table-sura {
+	border-top: solid 1px #C0C0C0 !important;
+	border-left: solid 1px #C0C0C0 !important;
+}
+
+.table td, .table th {
+	padding: .75rem;
+	font-size: 11px;
+}
+
+.table td {
+	color: #706F6F !important;
+}
+
+.table-active td {
+	color: #0039A6 !important;
+	background-color: #e3d829 !important;
+	font-weight: bold !important;
+}
+
+.texto {
+	font-size: 10px;
+	font-family: 'Trebuchet MS' !important;
+	text-align: justify;
+	text-decoration: none;
+}
+
+.table-bordered td, .table-bordered th {
+	font-family: 'Trebuchet MS';
+}
