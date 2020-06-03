@@ -1,0 +1,602 @@
+[
+	{
+		"id": "226",
+		"corto": "AEI ",
+		"descripcion": "AEI OCEAN SERVICES"
+	},
+	{
+		"id": "29855",
+		"corto": "ASW ",
+		"descripcion": "AIR SEA WORLDWIDE LOGISTICS PERU S.A.C."
+	},
+	{
+		"id": "2060",
+		"corto": "ALI ",
+		"descripcion": "ALIANCA LINES SOCIEDAD ANONIMA CERRADA"
+	},
+	{
+		"id": "333",
+		"corto": "ALW ",
+		"descripcion": "ALL WAY CARRIERS S.A."
+	},
+	{
+		"id": "227",
+		"corto": "APL ",
+		"descripcion": "AMERICAN PRESIDENT LINES LTD."
+	},
+	{
+		"id": "228",
+		"corto": "ASI ",
+		"descripcion": "ASIANA EXPRESS CORP."
+	},
+	{
+		"id": "229",
+		"corto": "ATL ",
+		"descripcion": "ASSOCIATED TRANSPORT LINE, L.L"
+	},
+	{
+		"id": "230",
+		"corto": "ATI ",
+		"descripcion": "ATL ILO"
+	},
+	{
+		"id": "334",
+		"corto": "CGO ",
+		"descripcion": "CARGONAVES"
+	},
+	{
+		"id": "232",
+		"corto": "COS ",
+		"descripcion": "CHINA OCEAN SHIPPING CO."
+	},
+	{
+		"id": "233",
+		"corto": "CHL ",
+		"descripcion": "CHL CONTAINER LINE L"
+	},
+	{
+		"id": "234",
+		"corto": "CTE ",
+		"descripcion": "CIA.TRASATLANTICA ESPAÑOLA"
+	},
+	{
+		"id": "29650",
+		"corto": "CMA ",
+		"descripcion": "CMA CGM"
+	},
+	{
+		"id": "236",
+		"corto": "COL ",
+		"descripcion": "COLUMBUS LINE"
+	},
+	{
+		"id": "237",
+		"corto": "CCN ",
+		"descripcion": "COMPAÑIA CHILENA DE NAVEGACION"
+	},
+	{
+		"id": "238",
+		"corto": "CLN ",
+		"descripcion": "COMPAÑIA LIBRA DE NAVEGACAO"
+	},
+	{
+		"id": "239",
+		"corto": "CSV ",
+		"descripcion": "COMPAÑIA SUD. DE VAPORES"
+	},
+	{
+		"id": "240",
+		"corto": "CSA ",
+		"descripcion": "COMPAÑIA SUDAMERICANA VAPORES"
+	},
+	{
+		"id": "241",
+		"corto": "CNP ",
+		"descripcion": "CONSORCIO NAVIERO PERUANO SA"
+	},
+	{
+		"id": "242",
+		"corto": "CLI ",
+		"descripcion": "CONTAINER LINE INC."
+	},
+	{
+		"id": "243",
+		"corto": "CON ",
+		"descripcion": "CONTERM"
+	},
+	{
+		"id": "29261",
+		"corto": "CCS ",
+		"descripcion": "COOL CARRIERS AB"
+	},
+	{
+		"id": "244",
+		"corto": "CSM ",
+		"descripcion": "COSMOS AGENCIA MARITIMA SAC"
+	},
+	{
+		"id": "245",
+		"corto": "CRO ",
+		"descripcion": "CROATIA LINE"
+	},
+	{
+		"id": "246",
+		"corto": "DMC ",
+		"descripcion": "D.M.CONSOL LINE"
+	},
+	{
+		"id": "247",
+		"corto": "DCL ",
+		"descripcion": "DIRECT CONTAINER LINE"
+	},
+	{
+		"id": "248",
+		"corto": "DOL ",
+		"descripcion": "DOLE"
+	},
+	{
+		"id": "249",
+		"corto": "ECU ",
+		"descripcion": "ECU LINE"
+	},
+	{
+		"id": "250",
+		"corto": "EME ",
+		"descripcion": "EMPREMAR"
+	},
+	{
+		"id": "251",
+		"corto": "EUR ",
+		"descripcion": "EUROSAL"
+	},
+	{
+		"id": "252",
+		"corto": "EUT ",
+		"descripcion": "EUROTLANTIC CONTAINER LINE S.A"
+	},
+	{
+		"id": "253",
+		"corto": "EVE ",
+		"descripcion": "EVER STAR SHIPPING (HK) LIMITE"
+	},
+	{
+		"id": "335",
+		"corto": "EMC ",
+		"descripcion": "EVERGREEN LINE"
+	},
+	{
+		"id": "254",
+		"corto": "FOR ",
+		"descripcion": "FOREVER STAR SHIPPIN"
+	},
+	{
+		"id": "255",
+		"corto": "LIB ",
+		"descripcion": "GRUPO LIBRA"
+	},
+	{
+		"id": "30275",
+		"corto": "GPC ",
+		"descripcion": "GRUPO PESQUERO CUKA"
+	},
+	{
+		"id": "256",
+		"corto": "GUL ",
+		"descripcion": "GULFPAC"
+	},
+	{
+		"id": "257",
+		"corto": "GES ",
+		"descripcion": "GULFPAC EXPRESS SERVICE"
+	},
+	{
+		"id": "258",
+		"corto": "HAM ",
+		"descripcion": "HAMBURG SUD"
+	},
+	{
+		"id": "477",
+		"corto": "HJS ",
+		"descripcion": "HANJIN SHIPPING CO. LTD."
+	},
+	{
+		"id": "260",
+		"corto": "HAP ",
+		"descripcion": "HAPAG LLOYD"
+	},
+	{
+		"id": "10182",
+		"corto": "CEX ",
+		"descripcion": "HAPAG-LLOYD ( PERU ) S.A.C."
+	},
+	{
+		"id": "261",
+		"corto": "HAR ",
+		"descripcion": "HARRISON LINE"
+	},
+	{
+		"id": "262",
+		"corto": "HTI ",
+		"descripcion": "HT INTL CO.,LTD"
+	},
+	{
+		"id": "478",
+		"corto": "HMM ",
+		"descripcion": "HYUNDAI MAERCHANT MARINE CO. LTD."
+	},
+	{
+		"id": "264",
+		"corto": "HYU ",
+		"descripcion": "HYUNDAI NO.106"
+	},
+	{
+		"id": "267",
+		"corto": "ITS ",
+		"descripcion": "INTERNATIOANL TRANSPORT SERVIC"
+	},
+	{
+		"id": "268",
+		"corto": "ICL ",
+		"descripcion": "INTERNATIONAL CONTAINER LINE L"
+	},
+	{
+		"id": "269",
+		"corto": "ITD ",
+		"descripcion": "INTERNATIONAL TRADING MUNDIPACI S.A.C. - INT.TRA.M"
+	},
+	{
+		"id": "270",
+		"corto": "INT ",
+		"descripcion": "INTERNAVES"
+	},
+	{
+		"id": "271",
+		"corto": "INO ",
+		"descripcion": "INTEROCEAN LINES INC"
+	},
+	{
+		"id": "266",
+		"corto": "IMU ",
+		"descripcion": "INVERS.MARITIMAS UNIVERSALES PERU S.A"
+	},
+	{
+		"id": "272",
+		"corto": "ITA ",
+		"descripcion": "ITALIA LINE"
+	},
+	{
+		"id": "273",
+		"corto": "KKK ",
+		"descripcion": "KAWASAKI KISEN KAISHA LTD ( K - LINE )"
+	},
+	{
+		"id": "274",
+		"corto": "KER ",
+		"descripcion": "KERTAINER LINES"
+	},
+	{
+		"id": "29857",
+		"corto": "KOS ",
+		"descripcion": "King Ocean Services, LTD"
+	},
+	{
+		"id": "276",
+		"corto": "LAU ",
+		"descripcion": "LAURITZEN PACIFIC LINE."
+	},
+	{
+		"id": "276",
+		"corto": "LAU ",
+		"descripcion": "LAURITZEN PACIFIC LINE."
+	},
+	{
+		"id": "277",
+		"corto": "LOI ",
+		"descripcion": "LEADER OCEAN INTERNAATIONAL"
+	},
+	{
+		"id": "280",
+		"corto": "MAE ",
+		"descripcion": "MAERSK LINE"
+	},
+	{
+		"id": "281",
+		"corto": "MLI ",
+		"descripcion": "MAERSK LINE S/A"
+	},
+	{
+		"id": "282",
+		"corto": "MAI ",
+		"descripcion": "MARINTER"
+	},
+	{
+		"id": "283",
+		"corto": "MAB ",
+		"descripcion": "MARITIMA DE BARCOS"
+	},
+	{
+		"id": "284",
+		"corto": "MAO ",
+		"descripcion": "MARITIMA OCEANO"
+	},
+	{
+		"id": "285",
+		"corto": "MAR ",
+		"descripcion": "MARUBA SCA"
+	},
+	{
+		"id": "286",
+		"corto": "MED ",
+		"descripcion": "MED PACIFIC EXPRESS"
+	},
+	{
+		"id": "287",
+		"corto": "MSC ",
+		"descripcion": "MEDITERRANEAN SHIPPING COMPANY S.A."
+	},
+	{
+		"id": "288",
+		"corto": "MET ",
+		"descripcion": "METRO LOGISTICS  O.,"
+	},
+	{
+		"id": "289",
+		"corto": "MIL ",
+		"descripcion": "MILNE"
+	},
+	{
+		"id": "290",
+		"corto": "MOL ",
+		"descripcion": "MITSUI OSK LINES LTD"
+	},
+	{
+		"id": "290",
+		"corto": "MOL ",
+		"descripcion": "MITSUI OSK LINES LTD"
+	},
+	{
+		"id": "291",
+		"corto": "NAU ",
+		"descripcion": "NAUTILIUS"
+	},
+	{
+		"id": "292",
+		"corto": "MAN ",
+		"descripcion": "NAVEGACAO MANSUR S.A."
+	},
+	{
+		"id": "293",
+		"corto": "NAV ",
+		"descripcion": "NAVICARGO S.A."
+	},
+	{
+		"id": "294",
+		"corto": "ESM ",
+		"descripcion": "NAVIERA ESMERALDA"
+	},
+	{
+		"id": "295",
+		"corto": "NED ",
+		"descripcion": "NEDLLOYD LINES"
+	},
+	{
+		"id": "296",
+		"corto": "NEP ",
+		"descripcion": "NEPTUNO AGENCIAS MARITIMAS"
+	},
+	{
+		"id": "297",
+		"corto": "NYK ",
+		"descripcion": "NIPPON YUSEN KAISHA"
+	},
+	{
+		"id": "298",
+		"corto": "NIS ",
+		"descripcion": "NISABULK"
+	},
+	{
+		"id": "36105",
+		"corto": "ONL ",
+		"descripcion": "OCEAN NETWORK EXPRESS"
+	},
+	{
+		"id": "300",
+		"corto": "OAP ",
+		"descripcion": "OPERACIONES ANGLO PERUANAS"
+	},
+	{
+		"id": "301",
+		"corto": "OOC ",
+		"descripcion": "ORIENT OVERSEAS CONTAINER LINE"
+	},
+	{
+		"id": "302",
+		"corto": "ORN ",
+		"descripcion": "ORION TRANSPORT LTD."
+	},
+	{
+		"id": "303",
+		"corto": "PIL ",
+		"descripcion": "PACIFIC INTERNATIONAL LINES"
+	},
+	{
+		"id": "304",
+		"corto": "PPL ",
+		"descripcion": "PACIFIC PERUVIAN LINE"
+	},
+	{
+		"id": "305",
+		"corto": "PSL ",
+		"descripcion": "PACIFIC STAR LINE LTD, INC."
+	},
+	{
+		"id": "306",
+		"corto": "PAN ",
+		"descripcion": "PAN GLORY SHIPPING CO.,LTD."
+	},
+	{
+		"id": "29932",
+		"corto": "PMI ",
+		"descripcion": "PESQUERA MILENKA C S.A"
+	},
+	{
+		"id": "307",
+		"corto": "PTA ",
+		"descripcion": "PORTUARIA TAYLOR"
+	},
+	{
+		"id": "308",
+		"corto": "SAF ",
+		"descripcion": "SAFMARINE AND CMBT LINES"
+	},
+	{
+		"id": "309",
+		"corto": "SAN ",
+		"descripcion": "SANG MYUNG SHIPPING CO.,LTD"
+	},
+	{
+		"id": "310",
+		"corto": "SSO ",
+		"descripcion": "SANTA SOFIA."
+	},
+	{
+		"id": "311",
+		"corto": "SCH ",
+		"descripcion": "SCHRYVER & CO (GMBH & CO)"
+	},
+	{
+		"id": "312",
+		"corto": "SEA ",
+		"descripcion": "SEABOARD MARINE LTD"
+	},
+	{
+		"id": "33383",
+		"corto": "SEL ",
+		"descripcion": "SEALAND"
+	},
+	{
+		"id": "313",
+		"corto": "SEM ",
+		"descripcion": "SEAPIECE MARINE CO.,LTD"
+	},
+	{
+		"id": "51248",
+		"corto": "SAT ",
+		"descripcion": "SEATRADE"
+	},
+	{
+		"id": "20120",
+		"corto": "SPW ",
+		"descripcion": "SPACE WISE PERU S.A.C"
+	},
+	{
+		"id": "314",
+		"corto": "SBO ",
+		"descripcion": "SUNG-BO SHIPPING CO.,LTD."
+	},
+	{
+		"id": "315",
+		"corto": "TBS ",
+		"descripcion": "TBS PACIFIC LINER,LTD"
+	},
+	{
+		"id": "316",
+		"corto": "TCA ",
+		"descripcion": "TCA SRL"
+	},
+	{
+		"id": "2",
+		"corto": "EMP ",
+		"descripcion": "TERMINALES PORTUARIOS PERUANOS SAC"
+	},
+	{
+		"id": "317",
+		"corto": "PSN ",
+		"descripcion": "THE PACIFIC STEAM NAVEGATION"
+	},
+	{
+		"id": "318",
+		"corto": "TLI ",
+		"descripcion": "TM LINES"
+	},
+	{
+		"id": "319",
+		"corto": "TMM ",
+		"descripcion": "TMM LINES"
+	},
+	{
+		"id": "322",
+		"corto": "TRA ",
+		"descripcion": "TRABAJOS MARITIMOS S.A."
+	},
+	{
+		"id": "320",
+		"corto": "TRR ",
+		"descripcion": "TRACASA"
+	},
+	{
+		"id": "321",
+		"corto": "TPE ",
+		"descripcion": "TRAIN PERU S.A."
+	},
+	{
+		"id": "323",
+		"corto": "TRN ",
+		"descripcion": "TRANSMARES S.A."
+	},
+	{
+		"id": "324",
+		"corto": "TSO ",
+		"descripcion": "TRANSOCEAN S.A."
+	},
+	{
+		"id": "325",
+		"corto": "TRS ",
+		"descripcion": "TRANSPACIFICO"
+	},
+	{
+		"id": "326",
+		"corto": "TNE ",
+		"descripcion": "TRANSPORTES NAVIEROS ECUATO"
+	},
+	{
+		"id": "21735",
+		"corto": "TRY ",
+		"descripcion": "TRINITY PERU SAC"
+	},
+	{
+		"id": "327",
+		"corto": "TRI ",
+		"descripcion": "TRITON"
+	},
+	{
+		"id": "328",
+		"corto": "UNL ",
+		"descripcion": "UNILINE, NAVIERA UNIVERSAL SA"
+	},
+	{
+		"id": "330",
+		"corto": "EEU ",
+		"descripcion": "USA"
+	},
+	{
+		"id": "331",
+		"corto": "VOT ",
+		"descripcion": "VOTAIRE"
+	},
+	{
+		"id": "332",
+		"corto": "WHL ",
+		"descripcion": "WHAN HAI LINES SINGAPORE PTE LTD"
+	},
+	{
+		"id": "29412",
+		"corto": "XPF ",
+		"descripcion": "X-PRESS FEEDERS PANAMA"
+	},
+	{
+		"id": "356",
+		"corto": "YML ",
+		"descripcion": "YANG MING MARITIME CORP."
+	}
+]

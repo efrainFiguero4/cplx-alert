@@ -29,7 +29,6 @@ export class SearchPipe implements PipeTransform {
 	}
 }
 
-
 @NgModule({
 	declarations: [CplxDatatableComponent, SearchPipe],
 	imports: [CommonModule, FormsModule, ReactiveFormsModule],

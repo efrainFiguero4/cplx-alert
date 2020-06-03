@@ -1,0 +1,10 @@
+<div class="search selection dropdown {{visible ? 'active': ''}} box-search">
+	<input class="form-control form-control-sm form-control-search search {{idcontainer}}" autocomplete="off"
+		[(ngModel)]="searchText" [placeholder]="placeholder" (change)="selected.emit(null)">
+	<div class="menu transition {{visible ? 'visible': 'hidden'}}">
+		<div *ngFor="let li of data | filter : searchText : visible : params" class="item"
+			(click)="selected.emit(li); visible = false; searchText = li['search']">
+			{{li['search']}}
+		</div>
+	</div>
+</div>

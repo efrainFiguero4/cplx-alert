@@ -29,6 +29,10 @@
       ],
       "cplx-datatable/*": [
         "dist/cplx-datatable/*"
+      ],
+      "cplx-autocomplete": [
+        "dist/cplx-autocomplete/cplx-autocomplete",
+        "dist/cplx-autocomplete/*"
       ]
     }
   }

@@ -1,0 +1,27 @@
+{
+	"name": "cplx-autocomplete",
+	"version": "0.0.1",
+	"description": "Input Autocomplete",
+	"author": {
+		"email": "efrain.figue.95@gmail.com",
+		"url": "https://github.com/kowalski50",
+		"name": "Efrain Figueroa"
+	},
+	"keywords": [
+		"angular",
+		"autocomplete"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/kowalski50/cplx-alert.git"
+	},
+	"homepage": "https://github.com/kowalski50",
+	"license": "MIT",
+	"peerDependencies": {
+		"@angular/common": "^9.1.9",
+		"@angular/core": "^9.1.9"
+	},
+	"dependencies": {
+		"tslib": "^1.10.0"
+	}
+}
