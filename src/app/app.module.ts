@@ -5,9 +5,9 @@ import { AppComponent } from './app.component';
 import { CplxAlertModule, CplxAlertService } from 'projects/cplx-alert/src/public_api';
 import { RouterModule, Routes } from '@angular/router';
 import { CplxDatatableModule } from 'projects/cplx-datatable/src/public_api';
-import { CplxAutocompleteModule } from 'projects/cplx-autocomplete/src/public-api';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CplxAutocompleteModule } from 'projects/cplx-autocomplete/src/public-api';
 
 const routes: Routes = [{
 	path: '', component: AppComponent
@@ -19,6 +19,7 @@ const routes: Routes = [{
 	],
 	imports: [
 		FormsModule,
+		ReactiveFormsModule,
 		BrowserModule,
 		HttpClientModule,
 		RouterModule.forRoot(routes),

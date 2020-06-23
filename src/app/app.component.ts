@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { CplxAlertService } from 'projects/cplx-alert/src/public_api';
 import { ConfigDataTable } from 'projects/cplx-datatable/src/public_api';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
 	selector: 'app-root',
@@ -23,12 +24,51 @@ export class AppComponent implements OnInit {
 	lista: any[];
 	data: any[];
 	inputselected;
+	inputselected2;
+	inputselected3;
+	loading: boolean = false;
+	ls_empresas: any[];
+
+	form = new FormGroup({
+		nombre: new FormControl('Nancy', Validators.minLength(2)),
+	});
+	get first(): any {
+		return this.form.get('first');
+	}
+
+	onSubmit(): void {
+		console.log(this.form.value);  // {first: 'Nancy', last: 'Drew'}
+	}
+
+	setValue() {
+		this.form.setValue({ first: 'Carson', last: 'Drew' });
+	}
 
 	ngOnInit() {
 		this.configtable.search = true;
 		this.configtable.pagination = true;
 		this.obtenerlista();
 		this.obtenertabla();
+	}
+
+	buscar_empresas(busqueda) {
+		var empresa = {};
+		this.searchText = busqueda;
+		empresa['usuario'] = "6711";
+		empresa['servicio'] = "1";
+		empresa['empresa'] = busqueda;
+		this.loading = true;
+		this.ls_empresas = [];
+		console.log(busqueda);
+
+		this.obtener_empresas(empresa)
+	}
+
+	obtener_empresas(request: any) {
+		this._http.post<any[]>("http://localhost:8087/nominacion/lista/empresas", request).subscribe(data => {
+			this.loading = false;
+			this.ls_empresas = data
+		})
 	}
 
 	go_alert(tipo) {

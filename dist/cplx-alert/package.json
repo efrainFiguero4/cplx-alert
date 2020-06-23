@@ -29,10 +29,12 @@
     "@angular/core": "^7.2.0"
   },
   "main": "bundles/cplx-alert.umd.js",
+  "module_ivy_ngcc": "__ivy_ngcc__/fesm5/cplx-alert.js",
   "module": "fesm5/cplx-alert.js",
   "es2015": "fesm2015/cplx-alert.js",
   "esm5": "esm5/cplx-alert.js",
   "esm2015": "esm2015/cplx-alert.js",
+  "fesm5_ivy_ngcc": "__ivy_ngcc__/fesm5/cplx-alert.js",
   "fesm5": "fesm5/cplx-alert.js",
   "fesm2015": "fesm2015/cplx-alert.js",
   "typings": "cplx-alert.d.ts",
@@ -40,5 +42,13 @@
   "sideEffects": false,
   "dependencies": {
     "tslib": "^1.9.0"
+  },
+  "__processed_by_ivy_ngcc__": {
+    "fesm5": "9.1.9",
+    "module": "9.1.9",
+    "typings": "9.1.9"
+  },
+  "scripts": {
+    "prepublishOnly": "node --eval \"console.error('ERROR: Trying to publish a package that has been compiled by NGCC. This is not allowed.\\nPlease delete and rebuild the package, without compiling with NGCC, before attempting to publish.\\nNote that NGCC may have been run by importing this package into another project that is being built with Ivy enabled.\\n')\" && exit 1"
   }
 }

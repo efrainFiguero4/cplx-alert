@@ -38,7 +38,7 @@ export class CplxDatatableComponent implements OnInit, OnChanges {
 			this.config = new ConfigDataTable;
 			this.itemlistcurrentpage = this.itemlist;
 		} else {
-			if (this.config.pagination) {
+			if (this.config.pagination && !isNullOrUndefined(this.itemlist) && this.itemlist.length) {
 				this.paginacion.actual = 1;
 				this.paginacion.paginasmostrar = 3;
 				this.paginacion.porpagina = 10;

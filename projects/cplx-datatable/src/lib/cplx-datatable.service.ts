@@ -65,7 +65,7 @@ export class CplxDatatableService {
 
 		var maximoitems = porpagina * paginaactual;
 		paginacion.hasta = maximoitems > totalitems ? totalitems : maximoitems;
-		console.log(paginacion);
+		//console.log(paginacion);
 		return paginacion;
 	}
 

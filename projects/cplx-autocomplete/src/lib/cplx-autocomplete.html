@@ -1,10 +1,29 @@
-<div class="search selection dropdown {{visible ? 'active': ''}} box-search">
-	<input class="form-control form-control-sm form-control-search search {{idcontainer}}" autocomplete="off"
-		[(ngModel)]="searchText" [placeholder]="placeholder" (change)="selected.emit(null)">
-	<div class="menu transition {{visible ? 'visible': 'hidden'}}">
-		<div *ngFor="let li of data | filter : searchText : visible : params" class="item"
-			(click)="selected.emit(li); visible = false; searchText = li['search']">
-			{{li['search']}}
-		</div>
+<div [formGroup]="formulario" class="search selection dropdown {{visible ? 'active': ''}} box-search"
+	[style.cursor]="disabled ? 'not-allowed' : 'default'">
+	<input #inputSearch class="form-control form-control-sm form-control-search search {{idcontainer}}"
+		(change)="selectedObject.emit(null)" autocomplete="off" formControlName="value" [placeholder]="placeholder"
+		[ngClass]="{'disabled': disabled}">
+	<div class="menu transition {{visible ? 'visible': 'hidden'}}" *ngIf="!disabled">
+		<ng-container *ngIf="loading && !filter; else templateName">
+			<div class="item">Buscando ...</div>
+		</ng-container>
+		<ng-template #templateName>
+			<div *ngFor="let li of filter ? (data | filter : inputSearch.value : visible : params) : data" class="item"
+				(click)="select(li)"> {{li[search]}}
+			</div>
+		</ng-template>
 	</div>
 </div>
+<!--input #inputSearch class="form-control form-control-sm" [(ngModel)]="value" [placeholder]="placeholder"
+	(change)="selectedObject.emit(null)" [ngClass]="{'disabled': disabled}" list="browsers" autocomplete="off">
+<ng-container *ngIf="loading && !filter; else templateName">
+	<datalist id="browsers">
+		<option> Cargando ...</option>
+	</datalist>
+</ng-container>
+<ng-template #templateName>
+	<datalist id="browsers">
+		<option *ngFor="let li of filter ? (data | filter : value : visible : params) : data"
+			(click)="selectedObject.emit(li)" [value]="li[search]"> {{li[search]}}</option>
+	</datalist>
+</ng-template-->
