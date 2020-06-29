@@ -1,4 +1,4 @@
-import { Component, OnDestroy, Input } from '@angular/core';
+import { Component, OnDestroy, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { Alert, CplxAlertService, AlertType } from './cplx-alert.service';
 import { isNullOrUndefined } from 'util';
 import { Subscription } from 'rxjs';
@@ -9,10 +9,10 @@ import { Subscription } from 'rxjs';
 	styleUrls: ['./cplx-alert.component.css']
 })
 
-export class CplxAlertComponent implements OnDestroy {
+export class CplxAlertComponent implements OnDestroy, OnChanges {
 
 	subscription: Subscription;
-	alertas = new Array<Alert>();
+	@Input() alertas = new Array<Alert>();
 	@Input() timeout: number;
 
 	constructor(private _sms: CplxAlertService) {
@@ -20,12 +20,24 @@ export class CplxAlertComponent implements OnDestroy {
 			if (alert && !isNullOrUndefined(alert.mensaje)) {
 				if (!this.validate_mensaje(alert)) {
 					this.alertas.push(alert);
+					let timeout = isNullOrUndefined(this.timeout) ? 5000 : this.timeout;
 					setTimeout(() => {
-						this.removerMensaje(alert, this.alertas.indexOf(alert));
-					}, isNullOrUndefined(this.timeout) ? 5000 : this.timeout)
+						this.removerMensaje(alert, alert.id);
+					}, timeout)
 				}
 			}
 		});
+	}
+
+	ngOnChanges(changes: SimpleChanges): void {
+		if (this.alertas.length > 0) {
+			for (let index = 1; index < this.alertas.length; index++) {
+				let timeout = (isNullOrUndefined(this.timeout) ? 5000 : this.timeout) + index + 1;
+				setTimeout(() => {
+					this.removerMensaje(this.alertas[index], this.alertas[index].id);
+				}, timeout)
+			}
+		}
 	}
 
 
@@ -42,10 +54,11 @@ export class CplxAlertComponent implements OnDestroy {
 	}
 
 
-	removerMensaje(alert: Alert, index) {
+	removerMensaje(alert: Alert, id: string) {
 		alert.class = 'ns-hide';
 		setTimeout(() => {
-			this.alertas.splice(index, 1);
+			let idx = this.alertas.findIndex(a => a.id == id);
+			this.alertas.splice(idx, 1);
 		}, 230);
 	}
 

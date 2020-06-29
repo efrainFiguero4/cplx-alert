@@ -8,27 +8,30 @@
 </div>
 
 <div class="container p-2">
-	<label class="text-bold"> Lineas cplx-autocomplete with params</label> {{inputselected | json}}
-	<cplx-autocomplete [data]="lista" [filter]="true" (selectedObject)="inputselected = $event"
-		[params]="['descripcion']" [reflectvalue]="'AEI OCEAN SERVICES'" [reflectparam]="'id'"
-		[placeholder]="'Buscar ...'" [required]='true'>
-	</cplx-autocomplete>
+	<form class="was-validated">
+		<label class="text-bold"> Lineas cplx-autocomplete with params</label> {{inputselected | json}}
+		<cplx-autocomplete [data]="lista" [filter]="true" (selectedObject)="inputselected = $event"
+			[params]="['descripcion']" [reflectvalue]="'AEI OCEAN SERVICES'" [reflectparam]="'id'"
+			[placeholder]="'Buscar ...'" [required]='true'>
+		</cplx-autocomplete>
+	</form>
 </div>
 <hr>
 <div class="container p-2">
 	<label class="text-bold"> cplx-autocomplete without filter</label> {{inputselected2 | json}} {{loading | json}}
 	<cplx-autocomplete [data]="ls_empresas" [placeholder]="'Buscar ...'" [params]="['razonsocial']" [loading]="loading"
 		(textChange)="buscar_empresas($event)" (selectedObject)="inputselected2 = $event" [reflectparam]="'razonsocial'"
-		[reflectvalue]="'20546700365'">
+		[reflectvalue]="'20546700365'" [required]='true'>
 	</cplx-autocomplete>
 </div>
 <hr>
 <div class="container p-2">
-	<form>
+	{{formulario.value | json}}
+	<form [formGroup]="formulario" class="was-validated">
 		<label class="text-bold"> cplx-autocomplete without filter</label> {{inputselected3 | json}} {{loading | json}}
 		<cplx-autocomplete [data]="lista" [filter]="true" [placeholder]="'Buscar ...'" [params]="['descripcion']"
-			[(loading)]="loading" (selectedObject)="inputselected3 = $event" [reflectparam]="'descripcion'"
-			[reflectvalue]="'AEI OCEAN SERVICES'">
+			formControlName="value" [(loading)]="loading" (selectedObject)="inputselected3 = $event"
+			[reflectparam]="'descripcion'" [reflectvalue]="'AEI OCEAN SERVICES'" [required]="true">
 		</cplx-autocomplete>
 	</form>
 </div>
@@ -37,7 +40,8 @@
 <button (click)="go_alert(2)" class="btn btn-danger mx-2">Alert danger </button>
 <button (click)="go_alert(4)" class="btn btn-info mx-2">Alert info </button>
 <button (click)="go_alert(3)" class="btn btn-warning mx-2">Alert warning </button>
-<cplx-alert [timeout]="1000"></cplx-alert>
+<button (click)="gotodo()" class="btn btn-warning mx-2">Alert TODO </button>
+<cplx-alert [timeout]="1000" [alertas]="alertas"></cplx-alert>
 
 
 <div class="container-fluid">

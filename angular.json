@@ -138,6 +138,11 @@
 					"options": {
 						"tsConfig": "projects/cplx-alert/tsconfig.lib.json",
 						"project": "projects/cplx-alert/ng-package.json"
+					},
+					"configurations": {
+						"production": {
+							"tsConfig": "projects/cplx-alert/tsconfig.lib.prod.json"
+						}
 					}
 				},
 				"test": {
@@ -173,6 +178,11 @@
 					"options": {
 						"tsConfig": "projects/cplx-datatable/tsconfig.lib.json",
 						"project": "projects/cplx-datatable/ng-package.json"
+					},
+					"configurations": {
+						"production": {
+							"tsConfig": "projects/cplx-datatable/tsconfig.lib.prod.json"
+						}
 					}
 				},
 				"test": {

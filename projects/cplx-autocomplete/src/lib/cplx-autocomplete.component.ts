@@ -1,9 +1,36 @@
-import { Component, OnInit, Input, HostListener, PipeTransform, Pipe, Output, EventEmitter, ElementRef, ViewChild, OnChanges, SimpleChanges, forwardRef } from '@angular/core';
+import { Component, OnInit, Input, HostListener, PipeTransform, Pipe, Output, EventEmitter, ElementRef, ViewChild, OnChanges, SimpleChanges, forwardRef, Renderer2, Directive } from '@angular/core';
+import { NG_VALUE_ACCESSOR, ControlValueAccessor, AbstractControl, NgControl } from '@angular/forms';
+import { debounceTime, map, distinctUntilChanged, filter } from "rxjs/operators";
 import { isNullOrUndefined } from 'util';
 import { fromEvent } from 'rxjs';
-import { of } from "rxjs";
-import { debounceTime, map, distinctUntilChanged, filter } from "rxjs/operators";
-import { NgModel, NG_VALUE_ACCESSOR, ControlValueAccessor, FormGroup, FormControl, Validators } from '@angular/forms';
+
+@Directive({
+	selector: '[fieldrequired]'
+})
+export class RequiredDirective implements OnInit {
+
+	hasRequiredField(abstractControl: AbstractControl) {
+		if (abstractControl.validator) {
+			const validator = abstractControl.validator({} as AbstractControl);
+			if (validator && validator.required) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	ngOnInit() {
+		const required = this.hasRequiredField(this.ngControl.control);
+		if (required) {
+			this.renderer.setAttribute(this.elementRef.nativeElement, 'readonly', '');
+		}
+	}
+
+	constructor(
+		private ngControl: NgControl, public renderer: Renderer2, public elementRef: ElementRef
+	) { }
+
+}
 
 @Pipe({ name: 'filter' })
 export class FilterPipe implements PipeTransform {
@@ -29,8 +56,6 @@ export class FilterPipe implements PipeTransform {
 }
 
 
-const noop = () => {
-};
 
 export const CUSTOM_INPUT_CONTROL_VALUE_ACCESSOR: any = {
 	provide: NG_VALUE_ACCESSOR,
@@ -57,7 +82,7 @@ export class CplxAutocompleteComponent implements OnInit, OnChanges, ControlValu
 	@Output() selectedObject = new EventEmitter<any>(true);
 	@Output() textChange = new EventEmitter<String>(true)
 	@Input() timeout = 500;
-	@Input() minlength = 2;
+	@Input() minlength = 3;
 	@Input() loading = false;
 	@Input() disabled: boolean = false;
 	@Input() reflectparam: any;
@@ -66,38 +91,30 @@ export class CplxAutocompleteComponent implements OnInit, OnChanges, ControlValu
 
 	@ViewChild('inputSearch', { static: true }) inputSearch: ElementRef;
 
-	formulario = new FormGroup({
-		value: new FormControl(null)
-	});
 
 	ngOnInit(): void {
 		this.idcontainer = Math.random().toString().split(".")[1];
-		if (!this.filter) {
-			fromEvent(this.inputSearch.nativeElement, 'keyup').pipe(
-				map((event: any) => {
-					return event.target.value;
-				}),
-				filter(res => res.length >= this.minlength),
-				debounceTime(this.timeout),
-				distinctUntilChanged()
-			).subscribe((text: string) => {
-				this.value = text;
-				this.visible = true;
-				this.textChange.emit(text);
-				//this.loading = true;
-			});
-		}
-
-		if (this.required) {
-			this.set_validator(this.formulario, "value", this.required);
-		}
-		this.formulario.controls.value.updateValueAndValidity();
-	}
-
-	set_validator(formgroup: FormGroup, control: string, required?: boolean) {
-		if (required) formgroup.controls[control].setValidators([Validators.required]);
-		else formgroup.controls[control].clearValidators();
-		formgroup.controls[control].updateValueAndValidity();
+		fromEvent(this.inputSearch.nativeElement, 'keyup').pipe(
+			map((event: any) => {
+				return event.target.value;
+			}),
+			filter(res => !this.filter ? res.length >= this.minlength : res.length >= 1),
+			debounceTime(this.timeout),
+			distinctUntilChanged()
+		).subscribe((text: string) => {
+			this.value = text;
+			this.visible = true;
+			this.textChange.emit(text);
+		});
+		fromEvent(this.inputSearch.nativeElement, 'click').pipe(
+			map((event: any) => {
+				return event.target.value;
+			}),
+			filter(res => !this.filter ? res.length >= this.minlength : res.length >= 1)
+		).subscribe((text: string) => {
+			this.value = text;
+			this.visible = true;
+		});
 	}
 
 	select(object: any) {
@@ -132,7 +149,6 @@ export class CplxAutocompleteComponent implements OnInit, OnChanges, ControlValu
 				}
 			}, 200);
 		}
-		this.formulario.controls.value.updateValueAndValidity();
 	}
 
 	@HostListener('window:click', ['$event.target'])
@@ -140,8 +156,7 @@ export class CplxAutocompleteComponent implements OnInit, OnChanges, ControlValu
 		let clases: string[] = targetElement.className.split(" ");
 		let clasecontrol: any[] = clases.filter(clase => clase == 'form-control-search');
 		let clasecontainer: any[] = clases.filter(clase => clase == this.idcontainer);
-		this.visible = (clasecontrol.length == 0 || clasecontainer.length == 0) ? false : true;
-		this.formulario.controls.value.updateValueAndValidity()
+		if (clasecontrol.length == 0 || clasecontainer.length == 0) this.visible = false;
 	}
 
 	private _value: any = '';
@@ -150,16 +165,12 @@ export class CplxAutocompleteComponent implements OnInit, OnChanges, ControlValu
 	set value(v: any) {
 		if (v !== this._value) {
 			this._value = v;
-			this.formulario.controls.value.setValue(v);
-			this.formulario.controls.value.updateValueAndValidity();
 			this.onChange(v);
 		}
 	}
 
 	writeValue(value: any) {
 		this._value = value;
-		this.formulario.controls.value.setValue(value);
-		this.formulario.controls.value.updateValueAndValidity();
 		this.onChange(value);
 	}
 

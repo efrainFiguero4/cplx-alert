@@ -7,6 +7,8 @@ export interface Alert {
 	mensaje?: string;
 	tipo?: AlertType;
 	class?: string;
+	id?: string
+	time?: number;
 }
 
 export enum AlertType {
@@ -41,6 +43,7 @@ export class CplxAlertService {
 
 	add(mensaje: Alert) {
 		mensaje.class = "ns-show"
+		mensaje.id = Math.random().toString().split(".")[1];
 		this.alerta.next(mensaje);
 	};
 

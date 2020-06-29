@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { CplxAlertService } from 'projects/cplx-alert/src/public_api';
+import { CplxAlertService, Alert } from 'projects/cplx-alert/src/public_api';
 import { ConfigDataTable } from 'projects/cplx-datatable/src/public_api';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
@@ -65,13 +65,50 @@ export class AppComponent implements OnInit {
 	}
 
 	obtener_empresas(request: any) {
-		this._http.post<any[]>("http://localhost:8087/nominacion/lista/empresas", request).subscribe(data => {
+		this._http.post<any[]>("http://localhost:8087/v1/nominacion/lista/empresas", request).subscribe(data => {
 			this.loading = false;
 			this.ls_empresas = data
 		})
 	}
+	formulario = new FormGroup({
+		value: new FormControl(null)
+	});
+
+	alertas = new Array<Alert>()
+	alertass = [
+		{ tipo: 2, mensaje: String(Math.random()) + "lhsoidh isdhfuisdhi uhsduifhisdufhuisdhfuisdhfiusdfhidsofhuisdhifuhsdiufhsdiufhsdiohofuihsdoiu uhfuisdhfiusdhifu" },
+		{ tipo: 2, mensaje: String(Math.random()) + "lhsoidh isdhfuisdhi uhsduifhisdufhuisdhfuisdhfiusdfhidsofhuisdhifuhsdiufhsdiufhsdiohofuihsdoiu uhfuisdhfiusdhifu" },
+		{ tipo: 2, mensaje: String(Math.random()) + "lhsoidh isdhfuisdhi uhsduifhisdufhuisdhfuisdhfiusdfhidsofhuisdhifuhsdiufhsdiufhsdiohofuihsdoiu uhfuisdhfiusdhifu" },
+		{ tipo: 2, mensaje: String(Math.random()) + "lhsoidh isdhfuisdhi uhsduifhisdufhuisdhfuisdhfiusdfhidsofhuisdhifuhsdiufhsdiufhsdiohofuihsdoiu uhfuisdhfiusdhifu" },
+		{ tipo: 2, mensaje: String(Math.random()) + "lhsoidh isdhfuisdhi uhsduifhisdufhuisdhfuisdhfiusdfhidsofhuisdhifuhsdiufhsdiufhsdiohofuihsdoiu uhfuisdhfiusdhifu" },
+		{ tipo: 2, mensaje: String(Math.random()) + "lhsoidh isdhfuisdhi uhsduifhisdufhuisdhfuisdhfiusdfhidsofhuisdhifuhsdiufhsdiufhsdiohofuihsdoiu uhfuisdhfiusdhifu" },
+		{ tipo: 2, mensaje: String(Math.random()) + "lhsoidh isdhfuisdhi uhsduifhisdufhuisdhfuisdhfiusdfhidsofhuisdhifuhsdiufhsdiufhsdiohofuihsdoiu uhfuisdhfiusdhifu" },
+		{ tipo: 2, mensaje: String(Math.random()) + "lhsoidh isdhfuisdhi uhsduifhisdufhuisdhfuisdhfiusdfhidsofhuisdhifuhsdiufhsdiufhsdiohofuihsdoiu uhfuisdhfiusdhifu" },
+		{ tipo: 2, mensaje: String(Math.random()) + "lhsoidh isdhfuisdhi uhsduifhisdufhuisdhfuisdhfiusdfhidsofhuisdhifuhsdiufhsdiufhsdiohofuihsdoiu uhfuisdhfiusdhifu" }
+	]
+	gotodo() {
+		this.alertas = this.alertass;
+	}
 
 	go_alert(tipo) {
+		this._sms.add({ tipo: tipo, mensaje: String(Math.random()) + "lhsoidh isdhfuisdhi uhsduifhisdufhuisdhfuisdhfiusdfhidsofhuisdhifuhsdiufhsdiufhsdiohofuihsdoiu uhfuisdhfiusdhifu" })
+		this._sms.add({ tipo: tipo, mensaje: String(Math.random()) + "lhsoidh isdhfuisdhi uhsduifhisdufhuisdhfuisdhfiusdfhidsofhuisdhifuhsdiufhsdiufhsdiohofuihsdoiu uhfuisdhfiusdhifu" })
+		this._sms.add({ tipo: tipo, mensaje: String(Math.random()) + "lhsoidh isdhfuisdhi uhsduifhisdufhuisdhfuisdhfiusdfhidsofhuisdhifuhsdiufhsdiufhsdiohofuihsdoiu uhfuisdhfiusdhifu" })
+		this._sms.add({ tipo: tipo, mensaje: String(Math.random()) + "lhsoidh isdhfuisdhi uhsduifhisdufhuisdhfuisdhfiusdfhidsofhuisdhifuhsdiufhsdiufhsdiohofuihsdoiu uhfuisdhfiusdhifu" })
+		this._sms.add({ tipo: tipo, mensaje: String(Math.random()) + "lhsoidh isdhfuisdhi uhsduifhisdufhuisdhfuisdhfiusdfhidsofhuisdhifuhsdiufhsdiufhsdiohofuihsdoiu uhfuisdhfiusdhifu" })
+		this._sms.add({ tipo: tipo, mensaje: String(Math.random()) + "lhsoidh isdhfuisdhi uhsduifhisdufhuisdhfuisdhfiusdfhidsofhuisdhifuhsdiufhsdiufhsdiohofuihsdoiu uhfuisdhfiusdhifu" })
+		this._sms.add({ tipo: tipo, mensaje: String(Math.random()) + "lhsoidh isdhfuisdhi uhsduifhisdufhuisdhfuisdhfiusdfhidsofhuisdhifuhsdiufhsdiufhsdiohofuihsdoiu uhfuisdhfiusdhifu" })
+		this._sms.add({ tipo: tipo, mensaje: String(Math.random()) + "lhsoidh isdhfuisdhi uhsduifhisdufhuisdhfuisdhfiusdfhidsofhuisdhifuhsdiufhsdiufhsdiohofuihsdoiu uhfuisdhfiusdhifu" })
+		this._sms.add({ tipo: tipo, mensaje: String(Math.random()) + "lhsoidh isdhfuisdhi uhsduifhisdufhuisdhfuisdhfiusdfhidsofhuisdhifuhsdiufhsdiufhsdiohofuihsdoiu uhfuisdhfiusdhifu" })
+		this._sms.add({ tipo: tipo, mensaje: String(Math.random()) + "lhsoidh isdhfuisdhi uhsduifhisdufhuisdhfuisdhfiusdfhidsofhuisdhifuhsdiufhsdiufhsdiohofuihsdoiu uhfuisdhfiusdhifu" })
+		this._sms.add({ tipo: tipo, mensaje: String(Math.random()) + "lhsoidh isdhfuisdhi uhsduifhisdufhuisdhfuisdhfiusdfhidsofhuisdhifuhsdiufhsdiufhsdiohofuihsdoiu uhfuisdhfiusdhifu" })
+		this._sms.add({ tipo: tipo, mensaje: String(Math.random()) + "lhsoidh isdhfuisdhi uhsduifhisdufhuisdhfuisdhfiusdfhidsofhuisdhifuhsdiufhsdiufhsdiohofuihsdoiu uhfuisdhfiusdhifu" })
+		this._sms.add({ tipo: tipo, mensaje: String(Math.random()) + "lhsoidh isdhfuisdhi uhsduifhisdufhuisdhfuisdhfiusdfhidsofhuisdhifuhsdiufhsdiufhsdiohofuihsdoiu uhfuisdhfiusdhifu" })
+		this._sms.add({ tipo: tipo, mensaje: String(Math.random()) + "lhsoidh isdhfuisdhi uhsduifhisdufhuisdhfuisdhfiusdfhidsofhuisdhifuhsdiufhsdiufhsdiohofuihsdoiu uhfuisdhfiusdhifu" })
+		this._sms.add({ tipo: tipo, mensaje: String(Math.random()) + "lhsoidh isdhfuisdhi uhsduifhisdufhuisdhfuisdhfiusdfhidsofhuisdhifuhsdiufhsdiufhsdiohofuihsdoiu uhfuisdhfiusdhifu" })
+		this._sms.add({ tipo: tipo, mensaje: String(Math.random()) + "lhsoidh isdhfuisdhi uhsduifhisdufhuisdhfuisdhfiusdfhidsofhuisdhifuhsdiufhsdiufhsdiohofuihsdoiu uhfuisdhfiusdhifu" })
+		this._sms.add({ tipo: tipo, mensaje: String(Math.random()) + "lhsoidh isdhfuisdhi uhsduifhisdufhuisdhfuisdhfiusdfhidsofhuisdhifuhsdiufhsdiufhsdiohofuihsdoiu uhfuisdhfiusdhifu" })
+		this._sms.add({ tipo: tipo, mensaje: String(Math.random()) + "lhsoidh isdhfuisdhi uhsduifhisdufhuisdhfuisdhfiusdfhidsofhuisdhifuhsdiufhsdiufhsdiohofuihsdoiu uhfuisdhfiusdhifu" })
 		this._sms.add({ tipo: tipo, mensaje: String(Math.random()) + "lhsoidh isdhfuisdhi uhsduifhisdufhuisdhfuisdhfiusdfhidsofhuisdhifuhsdiufhsdiufhsdiohofuihsdoiu uhfuisdhfiusdhifu" })
 	}
 

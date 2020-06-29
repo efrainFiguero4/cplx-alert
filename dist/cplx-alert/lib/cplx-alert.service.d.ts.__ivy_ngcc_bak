@@ -4,6 +4,8 @@ export interface Alert {
     mensaje?: string;
     tipo?: AlertType;
     class?: string;
+    id?: string;
+    time?: number;
 }
 export declare enum AlertType {
     None = 0,
