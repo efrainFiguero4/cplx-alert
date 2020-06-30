@@ -12,7 +12,7 @@
 		<label class="text-bold"> Lineas cplx-autocomplete with params</label> {{inputselected | json}}
 		<cplx-autocomplete [data]="lista" [filter]="true" (selectedObject)="inputselected = $event"
 			[params]="['descripcion']" [reflectvalue]="'AEI OCEAN SERVICES'" [reflectparam]="'id'"
-			[placeholder]="'Buscar ...'" [required]='true'>
+			[placeholder]="'Buscar ...'" [required]='true' [disabled]="false">
 		</cplx-autocomplete>
 	</form>
 </div>

@@ -89,8 +89,8 @@ export class CplxAutocompleteComponent implements OnInit, OnChanges, ControlValu
 	@Input() reflectvalue: any;
 	@Input() required = false;
 
+	public search = "search";
 	@ViewChild('inputSearch', { static: true }) inputSearch: ElementRef;
-
 
 	ngOnInit(): void {
 		this.idcontainer = Math.random().toString().split(".")[1];
@@ -106,15 +106,6 @@ export class CplxAutocompleteComponent implements OnInit, OnChanges, ControlValu
 			this.visible = true;
 			this.textChange.emit(text);
 		});
-		fromEvent(this.inputSearch.nativeElement, 'click').pipe(
-			map((event: any) => {
-				return event.target.value;
-			}),
-			filter(res => !this.filter ? res.length >= this.minlength : res.length >= 1)
-		).subscribe((text: string) => {
-			this.value = text;
-			this.visible = true;
-		});
 	}
 
 	select(object: any) {
@@ -123,7 +114,6 @@ export class CplxAutocompleteComponent implements OnInit, OnChanges, ControlValu
 		this.visible = false;
 	}
 
-	public search = "search";
 
 	ngOnChanges(changes: SimpleChanges): void {
 		this.completar();
@@ -154,9 +144,9 @@ export class CplxAutocompleteComponent implements OnInit, OnChanges, ControlValu
 	@HostListener('window:click', ['$event.target'])
 	onClick(targetElement: any) {
 		let clases: string[] = targetElement.className.split(" ");
-		let clasecontrol: any[] = clases.filter(clase => clase == 'form-control-search');
+		let clasecontrol: any[] = clases.filter(clase => clase == 'input-search');
 		let clasecontainer: any[] = clases.filter(clase => clase == this.idcontainer);
-		if (clasecontrol.length == 0 || clasecontainer.length == 0) this.visible = false;
+		if (clasecontrol.length == 0 && clasecontainer.length == 0) this.visible = false;
 	}
 
 	private _value: any = '';

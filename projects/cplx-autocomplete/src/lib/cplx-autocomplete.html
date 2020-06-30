@@ -1,15 +1,14 @@
-<div class="search selection dropdown {{visible ? 'active': ''}} box-search"
-	[style.cursor]="disabled ? 'not-allowed' : 'default'">
-	<input #inputSearch class="form-control form-control-sm form-control-search search {{idcontainer}}"
+<div class="search dropdown {{visible ? 'active': ''}}" [ngClass]="{'disabled': disabled}">
+	<input #inputSearch class="form-control form-control-sm search {{idcontainer}} input-search"
 		(change)="selectedObject.emit(null)" autocomplete="off" [(ngModel)]="value" [placeholder]="placeholder"
-		[ngClass]="{'disabled': disabled}" [required]="required"
-		[ngClass]="!required ? ( value == '' ? 'novalido': ''): ''">
+		[required]="required" [ngClass]="!required ? ( value == '' ? 'novalido': ''): ''"
+		(click)="visible = !filter ? value?.length >= minlength : value?.length > 0">
 	<div class="menu transition {{visible ? 'visible': 'hidden'}}" *ngIf="!disabled">
 		<ng-container *ngIf="loading && !filter; else templateName">
 			<div class="item">Buscando ...</div>
 		</ng-container>
 		<ng-template #templateName>
-			<div *ngFor="let li of filter ? (data | filter : inputSearch.value : visible : params) : data" class="item"
+			<div *ngFor="let li of filter ? (data | filter : value : visible : params) : data" class="item"
 				(click)="select(li)"> {{li[search]}}
 			</div>
 		</ng-template>
