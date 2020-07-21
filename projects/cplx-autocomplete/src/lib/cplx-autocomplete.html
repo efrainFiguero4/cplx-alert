@@ -1,9 +1,9 @@
-<div class="search dropdown {{visible ? 'active': ''}}" [ngClass]="{'disabled': disabled}">
+<div class="search dropdown {{visible ? 'active': ''}}" [ngClass]="{'disabled': isdisabled}">
 	<input #inputSearch class="form-control form-control-sm search {{idcontainer}} input-search"
 		(change)="selectedObject.emit(null)" autocomplete="off" [(ngModel)]="value" [placeholder]="placeholder"
-		[required]="required" [ngClass]="!required ? ( value == '' ? 'novalido': ''): ''"
-		(click)="visible = !filter ? value?.length >= minlength : value?.length > 0">
-	<div class="menu transition {{visible ? 'visible': 'hidden'}}" *ngIf="!disabled">
+		[required]="isrequired" [ngClass]="!isrequired ? ( value == '' ? 'novalido': ''): ''"
+		(click)="visible = !filter ? value?.length >= minlength : true">
+	<div class="menu transition {{visible ? 'visible': 'hidden'}}" *ngIf="!isdisabled">
 		<ng-container *ngIf="loading && !filter; else templateName">
 			<div class="item">Buscando ...</div>
 		</ng-container>

@@ -93,9 +93,9 @@
 	display: block;
 	outline: 0;
 	top: 100%;
-	min-width: -webkit-max-content;
-	min-width: -moz-max-content;
-	min-width: max-content;
+	/*min-width: -webkit-max-content;*/
+	/*min-width: -moz-max-content;*/
+	/*min-width: max-content;*/
 	margin: 0;
 	padding: 0 0;
 	background: #fff;
@@ -216,10 +216,4 @@
 	background-repeat: no-repeat;
 	background-position: 0;
 	background-size: 0;
-}
-
-.form-control:invalid[required] {
-	border-color: #ced4da;
-	padding-right: 1.5em;
-	background-image: none;
 }

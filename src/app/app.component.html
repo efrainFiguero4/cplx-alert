@@ -12,7 +12,7 @@
 		<label class="text-bold"> Lineas cplx-autocomplete with params</label> {{inputselected | json}}
 		<cplx-autocomplete [data]="lista" [filter]="true" (selectedObject)="inputselected = $event"
 			[params]="['descripcion']" [reflectvalue]="'AEI OCEAN SERVICES'" [reflectparam]="'id'"
-			[placeholder]="'Buscar ...'" [required]='true' [disabled]="false">
+			[placeholder]="'Buscar ...'" [isrequired]='true' [isdisabled]="false">
 		</cplx-autocomplete>
 	</form>
 </div>
@@ -21,7 +21,7 @@
 	<label class="text-bold"> cplx-autocomplete without filter</label> {{inputselected2 | json}} {{loading | json}}
 	<cplx-autocomplete [data]="ls_empresas" [placeholder]="'Buscar ...'" [params]="['razonsocial']" [loading]="loading"
 		(textChange)="buscar_empresas($event)" (selectedObject)="inputselected2 = $event" [reflectparam]="'razonsocial'"
-		[reflectvalue]="'20546700365'" [required]='true'>
+		[reflectvalue]="'20546700365'" [isrequired]='true'>
 	</cplx-autocomplete>
 </div>
 <hr>
@@ -31,7 +31,7 @@
 		<label class="text-bold"> cplx-autocomplete without filter</label> {{inputselected3 | json}} {{loading | json}}
 		<cplx-autocomplete [data]="lista" [filter]="true" [placeholder]="'Buscar ...'" [params]="['descripcion']"
 			formControlName="value" [(loading)]="loading" (selectedObject)="inputselected3 = $event"
-			[reflectparam]="'descripcion'" [reflectvalue]="'AEI OCEAN SERVICES'" [required]="true">
+			[reflectparam]="'descripcion'" [reflectvalue]="'AEI OCEAN SERVICES'" [isrequired]="true" [isdisabled]="true">
 		</cplx-autocomplete>
 	</form>
 </div>

@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, HostListener, PipeTransform, Pipe, Output, EventEmitter, ElementRef, ViewChild, OnChanges, SimpleChanges, forwardRef, Renderer2, Directive } from '@angular/core';
-import { NG_VALUE_ACCESSOR, ControlValueAccessor, AbstractControl, NgControl } from '@angular/forms';
+import { NG_VALUE_ACCESSOR, ControlValueAccessor, AbstractControl, NgControl, FormGroup, FormControl, Validators } from '@angular/forms';
 import { debounceTime, map, distinctUntilChanged, filter } from "rxjs/operators";
 import { isNullOrUndefined } from 'util';
 import { fromEvent } from 'rxjs';
@@ -22,6 +22,30 @@ export class RequiredDirective implements OnInit {
 	ngOnInit() {
 		const required = this.hasRequiredField(this.ngControl.control);
 		if (required) {
+			this.renderer.setAttribute(this.elementRef.nativeElement, 'required', '');
+		}
+	}
+
+	constructor(
+		private ngControl: NgControl, public renderer: Renderer2, public elementRef: ElementRef
+	) { }
+}
+
+@Directive({
+	selector: '[fieldreadonly]'
+})
+export class ReadOnlyDirective implements OnInit {
+
+	hasRequiredField(abstractControl: AbstractControl) {
+		if (abstractControl.disabled) {
+			return abstractControl.disabled;
+		}
+		return false;
+	}
+
+	ngOnInit() {
+		const required = this.hasRequiredField(this.ngControl.control);
+		if (required) {
 			this.renderer.setAttribute(this.elementRef.nativeElement, 'readonly', '');
 		}
 	}
@@ -29,7 +53,6 @@ export class RequiredDirective implements OnInit {
 	constructor(
 		private ngControl: NgControl, public renderer: Renderer2, public elementRef: ElementRef
 	) { }
-
 }
 
 @Pipe({ name: 'filter' })
@@ -84,10 +107,10 @@ export class CplxAutocompleteComponent implements OnInit, OnChanges, ControlValu
 	@Input() timeout = 500;
 	@Input() minlength = 3;
 	@Input() loading = false;
-	@Input() disabled: boolean = false;
+	@Input() isdisabled: boolean = false;
 	@Input() reflectparam: any;
 	@Input() reflectvalue: any;
-	@Input() required = false;
+	@Input() isrequired: boolean = false;
 
 	public search = "search";
 	@ViewChild('inputSearch', { static: true }) inputSearch: ElementRef;
@@ -98,7 +121,7 @@ export class CplxAutocompleteComponent implements OnInit, OnChanges, ControlValu
 			map((event: any) => {
 				return event.target.value;
 			}),
-			filter(res => !this.filter ? res.length >= this.minlength : res.length >= 1),
+			filter(res => !this.filter ? res.length >= this.minlength : true),
 			debounceTime(this.timeout),
 			distinctUntilChanged()
 		).subscribe((text: string) => {

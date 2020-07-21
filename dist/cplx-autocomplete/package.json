@@ -1,6 +1,6 @@
 {
   "name": "cplx-autocomplete",
-  "version": "2.1.1",
+  "version": "2.1.5",
   "description": "Input Autocomplete",
   "author": {
     "email": "efrain.figue.95@gmail.com",
@@ -25,23 +25,13 @@
     "tslib": "^1.10.0"
   },
   "main": "bundles/cplx-autocomplete.umd.js",
-  "module_ivy_ngcc": "__ivy_ngcc__/fesm5/cplx-autocomplete.js",
   "module": "fesm5/cplx-autocomplete.js",
   "es2015": "fesm2015/cplx-autocomplete.js",
   "esm5": "esm5/cplx-autocomplete.js",
   "esm2015": "esm2015/cplx-autocomplete.js",
-  "fesm5_ivy_ngcc": "__ivy_ngcc__/fesm5/cplx-autocomplete.js",
   "fesm5": "fesm5/cplx-autocomplete.js",
   "fesm2015": "fesm2015/cplx-autocomplete.js",
   "typings": "cplx-autocomplete.d.ts",
   "metadata": "cplx-autocomplete.metadata.json",
-  "sideEffects": false,
-  "__processed_by_ivy_ngcc__": {
-    "fesm5": "9.1.9",
-    "module": "9.1.9",
-    "typings": "9.1.9"
-  },
-  "scripts": {
-    "prepublishOnly": "node --eval \"console.error('ERROR: Trying to publish a package that has been compiled by NGCC. This is not allowed.\\nPlease delete and rebuild the package, without compiling with NGCC, before attempting to publish.\\nNote that NGCC may have been run by importing this package into another project that is being built with Ivy enabled.\\n')\" && exit 1"
-  }
+  "sideEffects": false
 }
